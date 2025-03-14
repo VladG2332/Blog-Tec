@@ -18,11 +18,14 @@ db = SQLAlchemy(app)
 
 #Importar los modelos
 from app.models import Category
+from app.models import Post
 
 #Importar las rutas
 from app.routes.category import categories_bp
+from app.routes.post import posts_bp
 
 app.register_blueprint(categories_bp, url_prefix='/categories')
+app.register_blueprint(posts_bp, url_prefix='/posts')
 
 #Ruta Raiz
 @app.route('/')
