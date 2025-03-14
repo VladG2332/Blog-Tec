@@ -16,6 +16,14 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+#Importar los modelos
+from app.models import Category
+
+#Importar las rutas
+from app.routes.category import categories_bp
+
+app.register_blueprint(categories_bp, url_prefix='/categories')
+
 #Ruta Raiz
 @app.route('/')
 def index():
