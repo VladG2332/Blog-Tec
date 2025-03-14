@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="content">
-                    <form action="{{ url_for('add_post') }}" method="post">
+                    <form action="{{ url_for('posts.add_post') }}" method="post">
                         <div class="field">
                             <label class="label">Titulo:</label>
                             <div class="control">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <button class="button is-success " type="submit">Agregar</button>
-                        <a class="button is-danger" href="{{ url_for('index') }}">Cancelar</a>
+                        <a class="button is-danger" href="{{ url_for('posts.listar_posts') }}">Cancelar</a>
                     </form>
                 </div>
             </div>
