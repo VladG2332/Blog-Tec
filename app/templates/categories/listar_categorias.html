@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title%} Blog de Noticias{% endblock %}
+{% block content%}
+<div class="columns">
+    <div class="column is-offset-3 is-6">
+        <a  href="{{ url_for('categories.add_category') }}" class="button is-success"><i class="fa-solid fa-plus"></i> &nbsp; Agregar Categoría</a>
+        <br><br>        
+        {% for category in categories %}
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">{{ category.name }}</p>
+                    </div>
+                </div>
+                <div class="content">
+                </div>
+                <a href="{{ url_for('categories.update_category', id = category.id )}}" class="button is-small is-link is-outlined"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="{{ url_for('categories.delete_category', id = category.id )}}" class="button is-small is-danger is-outlined"><i class="fa-solid fa-trash"></i></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock%}
