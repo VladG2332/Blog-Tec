@@ -30,4 +30,4 @@ app.register_blueprint(posts_bp, url_prefix='/posts')
 #Ruta Raiz
 @app.route('/')
 def index():
-    return "Hola Mundo"
+    return render_template('home.html')
